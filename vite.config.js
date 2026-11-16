@@ -8,6 +8,7 @@ export default defineConfig({
     rolldownOptions: {
       input: [
         'index.html',
+        'v2/index.html',
         'reviews/index.html',
         'contact/index.html',
         'thank-you/index.html',
