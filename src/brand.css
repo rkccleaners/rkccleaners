@@ -10,6 +10,30 @@
   --color-line: oklch(92.3% 0.003 48.717);
   --color-logo: #b4232c;
   --color-logo-hover: #921b24;
+  --color-bento-line: #ddd3c1;
+  --color-bento-line-active: var(--color-logo);
+  --color-exploration-accent-ink: #606da8;
+  --color-exploration-ink: #24488b;
+  --color-exploration-logo: #b91e2b;
+  --color-exploration-highlight: #2448b8;
+  --color-exploration-cta: var(--color-exploration-highlight);
+  --color-exploration-cta-hover: #1c3996;
+  --color-exploration-accent-hover: #2448b8;
+  --color-linen-background: #ece9e1;
+  --radius-exploration: 14px;
+  --color-exploration-background: #e9dcc6;
+  --color-exploration-banner: #1b3470;
+  --color-exploration-support: var(--color-ink);
+  --color-exploration-detail: var(--color-exploration-accent-ink);
+  --color-linen-backdrop: #f4ede1;
+  --color-linen-pink: #edcedb;
+  --color-linen-blue: #cbdfee;
+  --color-linen-rim-violet: #a491d8;
+  --color-linen-rim-blue: #79b9dc;
+  --color-linen-rim-pink: #d596b7;
+  --color-linen-edge: #fff;
+  --color-exploration-surface: #fff;
+  --color-red-soft: #fff0ee;
   --color-brand: #526b7c;
   --color-brand-hover: #3c5263;
   --color-brand-deep: #23313d;
@@ -31,6 +55,7 @@
   --font-heading: var(--font-body);
   --font-editorial: var(--font-body);
 
+  --radius-bento: 24px;
   --radius-button: 9999px;
   --radius-panel: 3rem;
   --radius-reason: 2rem;
