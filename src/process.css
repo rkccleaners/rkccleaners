@@ -1,0 +1,1145 @@
+.process-page {
+  background-image: radial-gradient(var(--color-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.process-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1280px;
+  margin: auto;
+  padding: 30px 40px;
+}
+.draft-label,
+.back-link,
+.process-eyebrow,
+.step-label,
+.step-tag {
+  font-size: 12px;
+  font-weight: 500;
+}
+.draft-label {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-button);
+  background: var(--color-surface);
+  padding: 8px 16px;
+  color: var(--color-muted);
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+}
+.process-intro {
+  text-align: center;
+  padding: 76px 24px 56px;
+}
+.process-eyebrow,
+.step-label {
+  color: var(--color-logo);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+.process-intro h1 {
+  margin: 20px 0 24px;
+  font-size: clamp(60px, 8vw, 106px);
+  font-weight: 500;
+  line-height: 0.99;
+  letter-spacing: -0.065em;
+}
+.process-intro h1 span {
+  color: var(--color-logo);
+}
+.process-intro > p:not(.process-eyebrow, .journey-hint) {
+  color: var(--color-muted);
+  font-size: 18px;
+  line-height: 1.65;
+}
+.journey-hint {
+  margin-top: 16px;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+.journey-road {
+  pointer-events: none;
+}
+.step-visit {
+  display: inline-grid;
+  vertical-align: middle;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-right: 8px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-button);
+  background: var(--color-surface);
+  color: var(--color-logo);
+}
+.step-visit svg {
+  width: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.has-arrived .step-visit {
+  background: var(--color-logo);
+  color: var(--color-surface);
+  border-color: var(--color-logo);
+}
+.has-arrived.road-stop {
+  background: var(--color-logo);
+  color: var(--color-surface);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--color-logo) 9%, transparent);
+}
+.roadside-tree {
+  position: absolute;
+  width: 48px;
+  height: 68px;
+  fill: var(--color-glass-tint);
+  stroke: var(--color-brand);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  transform-origin: bottom center;
+}
+.roadside-tree path:first-child {
+  fill: none;
+}
+.tree-1 {
+  left: 16%;
+  top: 20%;
+}
+.tree-2 {
+  left: 77%;
+  top: 29%;
+  width: 38px;
+}
+.tree-3 {
+  left: 60%;
+  top: 48%;
+}
+.tree-4 {
+  left: 16%;
+  top: 70%;
+  width: 38px;
+}
+.tree-5 {
+  left: 80%;
+  top: 81%;
+}
+.truck-exhaust {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .is-driving .truck-body {
+    animation: truck-bounce 0.24s ease-in-out infinite alternate;
+  }
+  .is-driving .wheel-spoke {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: wheel-turn 0.36s linear infinite;
+  }
+  .is-driving .truck-exhaust circle {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: exhaust-puff 0.85s ease-out infinite;
+  }
+  .is-driving .truck-exhaust {
+    opacity: 0.45;
+  }
+  .is-driving .truck-exhaust circle:nth-child(2) {
+    animation-delay: -0.28s;
+  }
+  .is-driving .truck-exhaust circle:nth-child(3) {
+    animation-delay: -0.56s;
+  }
+}
+@keyframes truck-bounce {
+  to {
+    transform: translateY(-1.5px) rotate(-0.5deg);
+  }
+}
+@keyframes wheel-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes exhaust-puff {
+  from {
+    opacity: 0.65;
+    transform: translate(3px, 2px) scale(0.5);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-12px, -7px) scale(1.6);
+  }
+}
+.route-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 28px;
+  min-height: 44px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.route-link span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--color-logo);
+  border-radius: var(--radius-button);
+  color: var(--color-logo);
+  font-size: 20px;
+}
+.journey {
+  position: relative;
+  width: min(1000px, calc(100% - 80px));
+  height: 1360px;
+  margin: 0 auto;
+  scroll-margin-top: 30px;
+}
+.journey-road,
+.road-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.road-svg path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.road-outline {
+  stroke: var(--color-line);
+  stroke-width: 58px;
+}
+.road-surface {
+  stroke: var(--color-surface);
+  stroke-width: 54px;
+}
+.road-dashes {
+  stroke: var(--color-logo);
+  stroke-width: 2px;
+  stroke-dasharray: 5 12;
+  opacity: 0.35;
+}
+.process-steps {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.process-step {
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.process-step:nth-child(even) {
+  justify-content: flex-start;
+}
+.step-copy {
+  width: 35%;
+  background: var(--color-page);
+  padding: 20px 0;
+}
+.step-copy h2 {
+  margin: 14px 0 16px;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+}
+.step-copy p {
+  max-width: 310px;
+  color: var(--color-muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+.step-tag {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--color-logo);
+}
+.road-stop {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-logo);
+  border-radius: var(--radius-button);
+  background: var(--color-page);
+  color: var(--color-logo);
+  font-size: 12px;
+  transform: translate(-50%, -50%);
+}
+.stop-1 {
+  left: 32%;
+  top: 12.5%;
+}
+.stop-2 {
+  left: 68%;
+  top: 37.5%;
+}
+.stop-3 {
+  left: 32%;
+  top: 62.5%;
+}
+.stop-4 {
+  left: 68%;
+  top: 87.5%;
+}
+.delivery-truck {
+  position: absolute;
+  z-index: 2;
+  width: 144px;
+  left: 32%;
+  top: 12.5%;
+  transform: translate(-50%, -84%);
+  filter: drop-shadow(
+    0 5px 4px color-mix(in srgb, var(--color-logo) 8%, transparent)
+  );
+}
+.delivery-truck svg {
+  width: 100%;
+  overflow: visible;
+}
+.delivery-truck.is-reversed svg,
+.delivery-truck.is-reversed text {
+  transform: scaleX(-1);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.process-footer {
+  text-align: center;
+  padding: 50px 24px 56px;
+}
+.process-footer > p {
+  font-size: clamp(22px, 3vw, 34px);
+  letter-spacing: -0.035em;
+}
+.process-footer small {
+  display: block;
+  margin-top: 60px;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+@media (max-width: 640px) {
+  .process-header {
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+  .draft-label {
+    order: 3;
+    width: 100%;
+    text-align: center;
+  }
+  .process-intro {
+    padding-top: 48px;
+  }
+  .process-intro h1 {
+    font-size: clamp(52px, 14vw, 80px);
+  }
+  .process-intro > p:not(.process-eyebrow, .journey-hint) {
+    font-size: 16px;
+  }
+  .journey {
+    width: calc(100% - 40px);
+    height: 1440px;
+  }
+  .process-step {
+    height: 360px;
+  }
+  .process-step:nth-child(n) {
+    justify-content: flex-end;
+  }
+  .step-copy {
+    width: calc(100% - 100px);
+  }
+  .step-copy h2 {
+    font-size: clamp(26px, 7vw, 36px);
+  }
+  .step-copy p {
+    font-size: 14px;
+  }
+  .step-label {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+  .road-stop:nth-of-type(n) {
+    left: 13%;
+  }
+  .delivery-truck {
+    width: 92px;
+    left: 13%;
+  }
+  .road-outline {
+    stroke-width: 40px;
+  }
+  .road-surface {
+    stroke-width: 36px;
+  }
+  .roadside-tree {
+    width: 24px;
+    height: 38px;
+  }
+  .tree-1,
+  .tree-3,
+  .tree-5 {
+    left: 0;
+  }
+  .tree-2,
+  .tree-4 {
+    left: 19%;
+    width: 22px;
+  }
+  .step-visit {
+    width: 44px;
+    height: 44px;
+    margin-right: 4px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(.process-page) {
+    scroll-behavior: auto;
+  }
+}
+
+.ride {
+  margin-top: 60px;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-line);
+}
+.ride-intro {
+  max-width: 1120px;
+  margin: auto;
+  padding: 100px 40px 80px;
+}
+.ride-intro h2 {
+  margin: 20px 0;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+.ride-intro > p:last-of-type {
+  color: var(--color-muted);
+}
+.ride-stage {
+  position: relative;
+  padding: 32px max(24px, calc((100% - 1040px) / 2));
+  background: var(--color-page);
+  overflow: hidden;
+}
+.ride-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.ride-topline a {
+  font-size: 12px;
+  padding-block: 12px;
+}
+.ride-panels {
+  position: relative;
+  z-index: 1;
+}
+.ride-panel {
+  max-width: 560px;
+  padding-block: 48px;
+}
+.ride-panel h3 {
+  margin: 20px 0;
+  font-size: clamp(36px, 5vw, 68px);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+}
+.ride-panel > p:not(.step-label) {
+  max-width: 390px;
+  color: var(--color-muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+.ride-landscape {
+  position: relative;
+  height: 240px;
+}
+.ride-truck {
+  position: absolute;
+  width: clamp(180px, 24vw, 300px);
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.ride-truck svg {
+  width: 100%;
+  overflow: visible;
+}
+.ride-ground {
+  position: absolute;
+  bottom: 0;
+  left: -100vw;
+  width: 300vw;
+  height: 52px;
+  background: var(--color-line);
+  border-top: 2px solid var(--color-glass-shade);
+  overflow: hidden;
+}
+.ride-road-markings {
+  width: calc(100% + 500px);
+  height: 3px;
+  margin-top: 25px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-surface) 0 35px,
+    transparent 35px 70px
+  );
+}
+.ride-controls {
+  display: none;
+}
+.ride-progress {
+  display: none;
+}
+.ride.is-animated .ride-stage {
+  height: 100svh;
+  min-height: 540px;
+}
+.is-animated .ride-panels {
+  height: calc(100% - 320px);
+  min-height: 250px;
+}
+.is-animated .ride-panel {
+  position: absolute;
+  inset: 0;
+  max-width: 630px;
+  padding-top: clamp(24px, 6vh, 64px);
+}
+.is-animated .ride-landscape {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 92px;
+  height: 230px;
+}
+.is-animated .ride-controls {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  gap: clamp(8px, 3vw, 40px);
+  left: 20px;
+  right: 20px;
+  bottom: 24px;
+}
+.ride-controls button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border-bottom: 2px solid transparent;
+  font-size: 12px;
+  color: var(--color-muted);
+  cursor: pointer;
+}
+.ride-controls button[aria-pressed='true'] {
+  color: var(--color-logo);
+  border-color: currentColor;
+}
+.ride-controls button:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+.is-animated .ride-progress {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-line);
+}
+.ride-progress-fill {
+  height: 100%;
+  background: var(--color-logo);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+@media (max-width: 640px) {
+  .ride-intro {
+    padding: 72px 24px 56px;
+  }
+  .ride-stage {
+    padding: 20px 24px;
+  }
+  .ride-topline .process-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+  .ride-panel h3 {
+    font-size: clamp(34px, 10vw, 48px);
+  }
+  .ride-panel > p:not(.step-label) {
+    font-size: 15px;
+  }
+  .is-animated .ride-panel {
+    padding-top: 40px;
+  }
+  .is-animated .ride-landscape {
+    height: 180px;
+    bottom: 90px;
+  }
+  .ride-controls button {
+    padding: 8px 4px;
+    gap: 5px;
+    font-size: 11px;
+  }
+}
+@media (max-height: 700px) and (min-width: 641px) {
+  .is-animated .ride-panel {
+    max-width: 52%;
+    padding-top: 12px;
+  }
+  .ride-panel h3 {
+    font-size: 42px;
+  }
+  .is-animated .ride-landscape {
+    left: 52%;
+    bottom: 90px;
+  }
+}
+@media (max-height: 720px) and (max-width: 640px) {
+  .is-animated .ride-panel {
+    padding-top: 16px;
+  }
+  .ride-panel h3 {
+    font-size: 32px;
+    margin: 12px 0;
+  }
+  .ride-panel .step-tag {
+    margin-top: 8px;
+  }
+  .is-animated .ride-landscape {
+    height: 130px;
+    bottom: 74px;
+  }
+  .ride-truck {
+    width: 140px;
+  }
+  .is-animated .ride-controls {
+    bottom: 12px;
+  }
+}
+
+.journey-navigation {
+  position: sticky;
+  top: 12px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: fit-content;
+  max-width: calc(100% - 24px);
+  margin: 12px auto 24px;
+  padding: 8px 16px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-button);
+  background: var(--color-surface);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--color-ink) 5%, transparent);
+  font-size: 12px;
+}
+.journey-navigation button {
+  width: 44px;
+  height: 44px;
+  color: var(--color-logo);
+  font-size: 22px;
+  cursor: pointer;
+}
+.journey-navigation button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.journey-navigation a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-muted);
+}
+.journey-navigation button:focus-visible {
+  outline: 3px solid var(--color-focus);
+  border-radius: var(--radius-button);
+}
+.route-count {
+  min-width: 64px;
+  text-align: center;
+}
+.overhead-concept {
+  border-top: 1px solid var(--color-line);
+}
+.top-down-truck {
+  width: 28px;
+  transform: translate(-50%, -50%);
+}
+.top-truck-drawing {
+  transform-origin: center;
+}
+.ride-locations {
+  position: absolute;
+  inset: 0;
+}
+.ride-location {
+  position: absolute;
+  width: 250px;
+  right: 18%;
+  bottom: 44px;
+  color: var(--color-brand);
+  text-align: center;
+}
+.ride-location:not(:first-child) {
+  display: none;
+}
+.is-animated .ride-location {
+  display: block;
+}
+.ride-location svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 360 / 280;
+  overflow: visible;
+}
+.ride-location > span {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0;
+}
+.ride-cargo {
+  display: none;
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  left: calc(50% - 66px);
+  bottom: 175px;
+  z-index: 2;
+}
+.is-animated .ride-cargo {
+  display: block;
+}
+.cargo-item {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  fill: var(--color-surface);
+  stroke: var(--color-logo);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+.cargo-bag {
+  fill: var(--color-warm-soft);
+}
+.cargo-bubbles {
+  fill: var(--color-glass-tint);
+  stroke: var(--color-brand);
+}
+.cargo-folded rect:nth-child(2) {
+  fill: var(--color-warm-soft);
+}
+.cargo-delivered {
+  fill: var(--color-warm-soft);
+}
+@media (max-width: 640px) {
+  .journey-navigation {
+    top: 8px;
+    gap: 4px;
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+  .journey-navigation > span:first-child {
+    display: none;
+  }
+  .top-down-truck {
+    width: 20px;
+  }
+  .ride-location {
+    width: 170px;
+    right: 5%;
+    bottom: 48px;
+  }
+  .ride-cargo {
+    width: 68px;
+    height: 68px;
+    bottom: 115px;
+    left: calc(50% - 50px);
+  }
+}
+@media (max-height: 720px) and (max-width: 640px) {
+  .ride-location {
+    width: 130px;
+  }
+  .ride-cargo {
+    width: 54px;
+    height: 54px;
+    bottom: 92px;
+  }
+}
+
+.ride-start-hint {
+  display: none;
+}
+.is-animated .ride-start-hint {
+  display: block;
+  position: absolute;
+  top: 42%;
+  left: 24px;
+  right: 24px;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+.ride-location svg {
+  fill: none;
+  stroke: var(--color-brand);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.scene-shadow {
+  fill: var(--color-brand-deep);
+  opacity: 0.08;
+  stroke: none;
+}
+.scene-path {
+  fill: var(--color-line);
+  stroke: none;
+}
+.scene-wall {
+  fill: var(--color-surface);
+  stroke: var(--color-glass-shade);
+}
+.scene-wing {
+  fill: var(--color-line);
+  stroke: var(--color-glass-shade);
+}
+.scene-roof {
+  fill: var(--color-brand-deep);
+  stroke: var(--color-brand-deep);
+}
+.scene-chimney {
+  fill: var(--color-page);
+}
+.scene-eave,
+.scene-garden {
+  stroke: var(--color-glass-shade);
+}
+.scene-window rect {
+  fill: var(--color-glass-tint);
+  stroke: var(--color-glass-shade);
+}
+.scene-window path {
+  stroke: var(--color-surface);
+  stroke-width: 2;
+}
+.scene-window .scene-sill {
+  stroke: var(--color-brand);
+}
+.scene-door {
+  fill: var(--color-warm-accent);
+  stroke: var(--color-warm-accent);
+}
+.scene-door-glass {
+  fill: var(--color-warm-soft);
+  stroke: none;
+}
+.scene-hardware {
+  fill: var(--color-surface);
+  stroke: none;
+}
+.scene-trim {
+  fill: var(--color-surface);
+  stroke: var(--color-glass-shade);
+}
+.scene-attic {
+  fill: var(--color-glass-tint);
+  stroke: var(--color-surface);
+  stroke-width: 3;
+}
+.scene-trim-line {
+  stroke: var(--color-surface);
+  stroke-width: 2;
+}
+.scene-shrubs {
+  fill: var(--color-glass-shade);
+  stroke: none;
+}
+.scene-shrubs ellipse:nth-child(even) {
+  fill: var(--color-brand);
+}
+.scene-flower {
+  fill: var(--color-warm-soft);
+  stroke: none;
+}
+.scene-cornice {
+  fill: var(--color-page);
+  stroke: var(--color-glass-shade);
+}
+.scene-sign {
+  fill: var(--color-page);
+  stroke: var(--color-line);
+}
+.scene-sign-text {
+  fill: var(--color-logo);
+  stroke: none;
+  font-family: var(--font-body);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.scene-shop-glass {
+  fill: var(--color-glass-tint);
+  stroke: var(--color-glass-shade);
+}
+.scene-awning {
+  fill: var(--color-logo);
+  stroke: var(--color-logo-hover);
+}
+.scene-awning-stripe {
+  fill: var(--color-surface);
+  opacity: 0.25;
+  stroke: none;
+}
+.scene-awning-edge {
+  fill: var(--color-logo-hover);
+  stroke: var(--color-logo-hover);
+}
+.scene-washer rect {
+  fill: var(--color-surface);
+  stroke: var(--color-glass-shade);
+}
+.scene-washer circle {
+  fill: var(--color-glass-tint);
+}
+.scene-washer path {
+  stroke: var(--color-surface);
+  stroke-width: 2;
+}
+.scene-linen rect {
+  fill: var(--color-surface);
+}
+.scene-linen rect:nth-child(2) {
+  fill: var(--color-warm-soft);
+}
+.scene-counter {
+  fill: var(--color-brand);
+  stroke: none;
+}
+.scene-planter {
+  fill: var(--color-page);
+  stroke: var(--color-glass-shade);
+}
+.scene-hardware-line {
+  stroke: var(--color-surface);
+  stroke-width: 3;
+}
+.scene-paving {
+  stroke: var(--color-glass-shade);
+}
+.ride-backdrop {
+  position: absolute;
+  bottom: 43px;
+  height: 230px;
+  left: -10%;
+  width: 125%;
+  overflow: hidden;
+}
+.backdrop-hill {
+  position: absolute;
+  border-radius: 50% 50% 0 0;
+}
+.hill-far {
+  left: -10%;
+  bottom: -60px;
+  height: 180px;
+  width: 80%;
+  background: color-mix(
+    in srgb,
+    var(--color-glass-tint) 24%,
+    var(--color-page)
+  );
+}
+.hill-near {
+  right: -8%;
+  bottom: -90px;
+  height: 180px;
+  width: 70%;
+  background: color-mix(
+    in srgb,
+    var(--color-glass-tint) 42%,
+    var(--color-page)
+  );
+}
+.backdrop-tree {
+  position: absolute;
+  width: 64px;
+  height: 107px;
+  bottom: 0;
+}
+.backdrop-tree-1 {
+  left: 5%;
+  width: 76px;
+  height: 127px;
+}
+.backdrop-tree-2 {
+  left: 19%;
+  width: 40px;
+  height: 67px;
+  bottom: 14px;
+  opacity: 0.65;
+}
+.backdrop-tree-3 {
+  left: 36%;
+}
+.backdrop-tree-4 {
+  left: 57%;
+  width: 44px;
+  height: 74px;
+  bottom: 18px;
+  opacity: 0.65;
+}
+.backdrop-tree-5 {
+  left: 79%;
+  width: 80px;
+  height: 134px;
+}
+.backdrop-tree-6 {
+  left: 94%;
+}
+.tree-trunk {
+  fill: none;
+  stroke: var(--color-brand);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.tree-canopy {
+  fill: var(--color-glass-shade);
+}
+.tree-canopy ellipse:nth-child(2) {
+  fill: var(--color-glass-tint);
+}
+.tree-canopy ellipse:nth-child(3) {
+  fill: var(--color-brand);
+  opacity: 0.65;
+}
+.tree-branch {
+  fill: none;
+  stroke: var(--color-page);
+  stroke-width: 1.5;
+  opacity: 0.5;
+}
+@media (max-width: 640px) {
+  .ride-backdrop {
+    height: 180px;
+  }
+  .backdrop-tree {
+    width: 38px;
+    height: 64px;
+  }
+  .backdrop-tree-2,
+  .backdrop-tree-4 {
+    width: 28px;
+    height: 47px;
+  }
+  .backdrop-tree-5 {
+    width: 48px;
+    height: 80px;
+  }
+}
+
+.scene-siding {
+  stroke: var(--color-line);
+  stroke-width: 1;
+}
+.scene-roof {
+  fill: var(--color-vehicle-edge);
+  stroke: var(--color-vehicle-edge);
+}
+.scene-door {
+  fill: var(--color-brand-deep);
+  stroke: var(--color-brand-deep);
+}
+.scene-sign-text {
+  font-size: 16px;
+  letter-spacing: 1.5px;
+}
+.scene-window rect {
+  rx: 0;
+}
+.ride-backdrop {
+  width: 180%;
+}
+.ride-road-markings {
+  width: calc(100% + 1400px);
+}
+.cargo-item {
+  stroke: var(--color-vehicle-edge);
+  stroke-width: 1.3;
+}
+.cloth-shadow {
+  fill: var(--color-brand-deep);
+  opacity: 0.08;
+  stroke: none;
+}
+.cloth-fabric {
+  fill: var(--color-surface);
+}
+.cargo-bag .cloth-fabric {
+  fill: var(--color-page);
+}
+.cloth-seam {
+  fill: none;
+  stroke: var(--color-glass-shade);
+  stroke-width: 1;
+}
+.cloth-tie {
+  fill: none;
+  stroke: var(--color-brand);
+  stroke-width: 2;
+}
+.linen-layer {
+  fill: var(--color-surface);
+  stroke: var(--color-glass-shade);
+  stroke-width: 1;
+}
+.linen-layer path + path {
+  fill: none;
+  opacity: 0.65;
+}
+.linen-middle {
+  fill: var(--color-glass-tint);
+}
+.package-paper {
+  fill: var(--color-page);
+}
+.package-band {
+  fill: var(--color-brand);
+  stroke: none;
+}

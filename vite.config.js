@@ -11,6 +11,7 @@ export default defineConfig({
         'reviews/index.html',
         'contact/index.html',
         'thank-you/index.html',
+        'process/index.html',
       ],
     },
   },
