@@ -1,1 +1,0 @@
-import"./modulepreload-polyfill-P2Xu9kJm.js";/* empty css              */import{t as e}from"./header-menu-CslBhzaI.js";e(document.querySelector(`.site-header`));
