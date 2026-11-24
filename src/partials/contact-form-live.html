@@ -1,0 +1,58 @@
+<!-- Web3Forms access keys are public by design; restrict allowed domains in the Web3Forms dashboard. -->
+<form
+  id="contact-form"
+  class="contact-form"
+  action="https://api.web3forms.com/submit"
+  method="POST"
+>
+  <input
+    type="hidden"
+    name="access_key"
+    value="7ac83a51-cf1e-44a8-bbcf-2ca913540f2a"
+  />
+  <input
+    type="hidden"
+    name="subject"
+    value="New message from the RKC Cleaners website"
+  />
+  <input type="hidden" name="from_name" value="RKC Cleaners website" />
+  <input
+    type="checkbox"
+    name="botcheck"
+    class="hidden"
+    tabindex="-1"
+    autocomplete="off"
+  />
+
+  <label class="contact-field">
+    Name
+    <input type="text" name="name" autocomplete="name" required />
+  </label>
+  <label class="contact-field">
+    Email
+    <input type="email" name="email" autocomplete="email" required />
+  </label>
+  <label class="contact-field">
+    <span>Phone <span class="contact-optional">(optional)</span></span>
+    <input type="tel" name="phone" autocomplete="tel" />
+  </label>
+  <label class="contact-field">
+    <span id="message-label">Message</span>
+    <span id="message-hint" class="font-normal text-muted">
+      Tell us your hotel’s location, which services you need, and how often
+      you’d like pickup.
+    </span>
+    <textarea
+      name="message"
+      rows="6"
+      aria-labelledby="message-label"
+      aria-describedby="message-hint"
+      required
+    ></textarea>
+  </label>
+
+  <div class="h-captcha" data-captcha="true"></div>
+
+  <button class="button" type="submit">Send message</button>
+  <p id="contact-status" class="contact-status" role="status"></p>
+</form>

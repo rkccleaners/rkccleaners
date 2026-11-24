@@ -58,7 +58,9 @@ new IntersectionObserver(
   { threshold: 0.12 },
 ).observe(document.querySelector('.site-footer'));
 
-const contactForm = document.querySelector('form');
+const contactForm = document.querySelector(
+  'form[aria-describedby="form-note"]',
+);
 const formStatus = document.querySelector('#form-status');
 
 contactForm?.addEventListener('submit', (event) => {
