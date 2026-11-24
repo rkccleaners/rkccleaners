@@ -1,25 +1,37 @@
 @theme {
-  --color-cinema: #000;
-  --color-page: #f3f1ed;
-  --color-surface: #fff;
-  --color-header-glass: rgb(220 240 255 / 42%);
-  --color-header-glass-expanded: rgb(225 240 255 / 62%);
-  --color-ink: oklch(21.6% 0.006 56.043);
-  --color-muted: oklch(44.4% 0.011 73.639);
-  --color-line: oklch(92.3% 0.003 48.717);
-  --color-brand: #b4232c;
-  --color-brand-hover: #921b24;
-  --color-brand-deep: #28191b;
-  --color-on-brand: #fff;
-  --color-on-brand-muted: #fce8e9;
-  --color-accent: #1f5aa6;
-  --color-focus: #b4232c;
+  --color-page: #fff;
+  --color-navy: var(--color-accent);
+  --color-accent: #36558c;
+  --color-logo: #aa1c29;
+  --color-ink: var(--color-navy);
+  --color-muted: #444;
+  --color-surface: color-mix(in srgb, var(--color-navy) 8%, white);
+  --color-line: color-mix(in srgb, var(--color-navy) 20%, white);
+  --color-prism-blue: color-mix(in srgb, var(--color-accent) 27%, white);
+  --color-prism-yellow: #ffe79b;
+  --color-focus: var(--color-accent);
+  --font-body: Montserrat, 'Avenir Next', 'Segoe UI', sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Avenir Next', 'Segoe UI', sans-serif;
+  --radius-button: 999px;
+  --radius-panel: 1rem;
+}
 
-  --font-body: 'Outfit', sans-serif;
-  --font-heading: var(--font-body);
-  --font-editorial: var(--font-body);
-
-  --radius-button: 9999px;
-  --radius-panel: 3rem;
-  --radius-reason: 2rem;
+:root {
+  --red-backing-shadow: clamp(0.45rem, 1.4vw, 1.35rem)
+    clamp(0.5rem, 1.3vw, 1.25rem) 0 var(--color-logo);
+  --linen-texture:
+    linear-gradient(
+      180deg,
+      rgb(255 255 255 / 45%),
+      transparent 50%,
+      rgb(255 255 255 / 55%)
+    ),
+    repeating-linear-gradient(
+      97deg,
+      #fff 0%,
+      #f5f5f5 12%,
+      #e8e8e8 16%,
+      #fff 20%,
+      #fafafa 32%
+    );
 }

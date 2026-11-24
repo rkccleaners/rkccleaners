@@ -1,0 +1,63 @@
+@theme {
+  --color-cinema: #000;
+  --color-page: #f3f1ed;
+  --color-surface: #fff;
+  --color-canvas: #f5f7fa;
+  --color-header-glass: rgb(217 228 237 / 42%);
+  --color-header-glass-expanded: rgb(0 0 0 / 45%);
+  --color-ink: oklch(21.6% 0.006 56.043);
+  --color-muted: oklch(44.4% 0.011 73.639);
+  --color-line: oklch(92.3% 0.003 48.717);
+  --color-logo: #b4232c;
+  --color-logo-hover: #921b24;
+  --color-bento-line: #ddd3c1;
+  --color-bento-line-active: var(--color-logo);
+  --color-exploration-accent-ink: #606da8;
+  --color-exploration-ink: #24488b;
+  --color-exploration-logo: #b91e2b;
+  --color-exploration-highlight: #2448b8;
+  --color-exploration-cta: var(--color-exploration-highlight);
+  --color-exploration-cta-hover: #1c3996;
+  --color-exploration-accent-hover: #2448b8;
+  --color-linen-background: #ece9e1;
+  --radius-exploration: 14px;
+  --color-exploration-background: #e9dcc6;
+  --color-exploration-banner: #1b3470;
+  --color-exploration-support: var(--color-ink);
+  --color-exploration-detail: var(--color-exploration-accent-ink);
+  --color-linen-backdrop: #f4ede1;
+  --color-linen-pink: #edcedb;
+  --color-linen-blue: #cbdfee;
+  --color-linen-rim-violet: #a491d8;
+  --color-linen-rim-blue: #79b9dc;
+  --color-linen-rim-pink: #d596b7;
+  --color-linen-edge: #fff;
+  --color-exploration-surface: #fff;
+  --color-red-soft: #fff0ee;
+  --color-brand: #526b7c;
+  --color-brand-hover: #3c5263;
+  --color-brand-deep: #23313d;
+  --color-on-brand: #fff;
+  --color-on-brand-muted: #dfe8ee;
+  --color-accent: #526b7c;
+  --color-focus: #526b7c;
+
+  --color-glass-tint: #c4d5e2;
+  --color-glass-shade: #718b9f;
+  --color-glass-edge: #b7cbdc;
+  --color-hero-glow: #8ebed5;
+  --color-hero-shimmer: #e0edf6;
+  --color-hero-pink: #ead3df;
+  --color-warm-accent: #9c455e;
+  --color-warm-soft: #f2e4eb;
+
+  --font-body: 'Outfit', sans-serif;
+  --font-heading: var(--font-body);
+  --font-editorial: var(--font-body);
+
+  --radius-bento: 24px;
+  --radius-button: 9999px;
+  --radius-panel: 3rem;
+  --radius-reason: 2rem;
+  --radius-card: 1.5rem;
+}

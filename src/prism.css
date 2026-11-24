@@ -1,0 +1,82 @@
+@property --prism-strength {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+.hero {
+  --glass-light: radial-gradient(
+    ellipse 240px 190px at var(--prism-x, 50%) var(--prism-y, 50%),
+    rgb(255 255 255 / calc(0.52 * var(--prism-strength))),
+    transparent 76%
+  );
+  transition: --prism-strength 700ms ease;
+}
+
+.hero.is-prism-lit {
+  --prism-strength: 1;
+}
+
+.image-placeholder {
+  position: relative;
+  aspect-ratio: 1.9;
+  border: 1px solid rgb(171 177 190 / 38%);
+  border-radius: var(--radius-panel);
+  background: linear-gradient(
+    145deg,
+    rgb(255 255 255 / 76%),
+    rgb(255 255 255 / 28%) 54%,
+    rgb(255 255 255 / 58%)
+  );
+  background-color: rgb(255 255 255 / 40%);
+  box-shadow: var(--red-backing-shadow);
+}
+
+.image-placeholder::after {
+  content: '';
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 2px;
+  border: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    circle var(--rim-radius, 240px) at var(--rim-x, 50%) var(--rim-y, 50%),
+    var(--color-prism-yellow),
+    var(--color-prism-blue) 52%,
+    transparent 100%
+  );
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 700ms ease;
+}
+
+.image-placeholder.is-prism-lit::after {
+  opacity: var(--rim-strength, 0);
+}
+
+@media (prefers-reduced-motion: reduce) and (hover: hover) {
+  .hero:not(:has(.hero-ribbon:hover, .image-placeholder:hover)):hover {
+    --glass-light: linear-gradient(125deg, rgb(255 255 255 / 24%), transparent);
+  }
+
+  .image-placeholder:hover::after {
+    background: linear-gradient(
+      125deg,
+      var(--color-prism-blue),
+      var(--color-prism-yellow)
+    );
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .image-placeholder::after {
+    transition: none;
+  }
+}

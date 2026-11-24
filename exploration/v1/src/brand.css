@@ -1,0 +1,25 @@
+@theme {
+  --color-cinema: #000;
+  --color-page: #f3f1ed;
+  --color-surface: #fff;
+  --color-header-glass: rgb(220 240 255 / 42%);
+  --color-header-glass-expanded: rgb(225 240 255 / 62%);
+  --color-ink: oklch(21.6% 0.006 56.043);
+  --color-muted: oklch(44.4% 0.011 73.639);
+  --color-line: oklch(92.3% 0.003 48.717);
+  --color-brand: #b4232c;
+  --color-brand-hover: #921b24;
+  --color-brand-deep: #28191b;
+  --color-on-brand: #fff;
+  --color-on-brand-muted: #fce8e9;
+  --color-accent: #1f5aa6;
+  --color-focus: #b4232c;
+
+  --font-body: 'Outfit', sans-serif;
+  --font-heading: var(--font-body);
+  --font-editorial: var(--font-body);
+
+  --radius-button: 9999px;
+  --radius-panel: 3rem;
+  --radius-reason: 2rem;
+}
