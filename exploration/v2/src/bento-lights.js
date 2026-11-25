@@ -1,9 +1,10 @@
 import { gsap } from 'gsap';
 
-export function initBentoLights() {
-  const cards = document.querySelectorAll(
-    '.hero-note, .service-item, .static-reviews .review-card, #partners, #why-us > .section-inner',
-  );
+export function initBentoLights(
+  selector = '.hero-note, .service-item, .static-reviews .review-card, #partners, #why-us > .section-inner',
+  ignoreSelector,
+) {
+  const cards = document.querySelectorAll(selector);
   cards.forEach((card) => card.classList.add('prism-card'));
   let active = null;
   let paused = false;
@@ -24,6 +25,10 @@ export function initBentoLights() {
         'pointermove',
         (event) => {
           if (paused || event.pointerType === 'touch') return;
+          if (ignoreSelector && event.target.closest(ignoreSelector)) {
+            clear();
+            return;
+          }
           const card = event.target.closest('.prism-card');
           if (card !== active) {
             clear();

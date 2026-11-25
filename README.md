@@ -84,3 +84,10 @@ Vite uses `/rkccleaners/` as its production base; PR builds override it with the
 - **Port already in use:** open the URL Vite prints; it may choose the next available port.
 
 Stack references: [Vite](https://vite.dev/guide/), [Tailwind with Vite](https://tailwindcss.com/docs/installation/using-vite), and [GSAP matchMedia](<https://gsap.com/docs/v3/GSAP/gsap.matchMedia()/>).
+
+## Design explorations
+
+Run `npm run dev` and open the printed site URL. The root is the new boilerplate. The older designs have their own entry points under the same Vite base path.
+
+- `exploration/v1/` preserves the homepage-sections design, including its reviews page.
+- `exploration/v2/layout/` opens the interactive V2 design from `feat/new-layout-exploration`. The snapshot’s original homepage is at `exploration/v2/`.

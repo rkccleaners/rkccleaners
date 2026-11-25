@@ -1,7 +1,7 @@
-export function initHeaderMenu(header) {
+export function initHeaderMenu(header, menuQuery = '(max-width: 640px)') {
   const button = header.querySelector('.header-menu');
   const label = button.querySelector('.header-menu-label');
-  const mobile = window.matchMedia('(max-width: 640px)');
+  const mobile = window.matchMedia(menuQuery);
   const events = new AbortController();
   const options = { signal: events.signal };
 

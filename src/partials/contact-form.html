@@ -1,0 +1,17 @@
+<form aria-describedby="form-note">
+  <p id="form-note" class="text-muted">
+    Prototype form. Entries stay on this page.
+  </p>
+  <label>Name <input autocomplete="name" required /></label>
+  <label>Email <input type="email" autocomplete="email" required /></label>
+  <label>
+    Message
+    <span id="message-hint" class="font-normal text-muted">
+      Tell us your hotel’s location, which services you need, and how often
+      you’d like pickup.
+    </span>
+    <textarea rows="4" aria-describedby="message-hint" required></textarea>
+  </label>
+  <button class="button" type="submit">Preview Inquiry</button>
+  <p role="status" id="form-status"></p>
+</form>
